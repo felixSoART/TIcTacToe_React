@@ -1,0 +1,286 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  cursor: noc;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  user-select: none;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  overflow: hidden;
+}
+
+.symbol{
+  position: absolute;
+  max-width: 10%;
+  top: -70px;   /* Para centrarlo en realcion con el tamaño de la letra */
+  left:-40px;  /* Para centrarlo en realcion con el tamaño de la letra */
+  z-index: 9999;
+   width: auto;
+  height: auto;
+  display: grid;
+  place-items: center;
+  font-size: 80px;
+  text-transform: uppercase;
+  pointer-events: none;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.onContextMenuHidden{
+  
+  display: none;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.board {
+  width: fit-content;
+  margin: -100px auto;
+  text-align: center;
+}
+
+.board h1 {
+  color: #eee;
+  margin-bottom: 16px;
+}
+
+.board button {
+  padding: 16px 24px;
+  display: block;
+  margin:  50px auto;
+  font-size: 28px;
+  background: #ce776c;
+  border: 4px solid #9cee99;
+  color: rgb(133, 160, 241) ;
+  width: 220px;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-weight: bolder;
+  cursor: pointer;
+  
+  font-family: 'Quicksand', sans-serif;
+  
+}
+
+.board button:hover {
+  background: #9cee99;
+  border: solid 4px rgb(113, 143, 233);
+  font-size: 30px;
+  top: -10px;
+  color: #ce776c;
+  font-weight: bolder;
+  transition: 2s;
+}
+
+.board .game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.turn {
+  display: flex;
+  justify-content: center;
+  margin: 30px 20%;
+  width: auto;
+  position: relative;
+  border-radius: 10px;
+
+}
+
+
+
+.turn .square,
+.winner .square {
+  margin-top: 0px;
+  width: 140px;
+  height: 140px;
+  pointer-events: none;
+  border-color: transparent;
+  text-align: center;
+  font-size: 70px;
+  margin: auto;
+}
+
+.square.is-selected {
+  
+  background: rgba(255, 255, 255, 0.23);
+}
+
+.winner {
+  position: absolute;
+  width: 100% ;
+  height: 100% ;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.winner .text {
+  background: rgba(0, 0, 0, 0.97);
+  height: auto;
+  width: auto;
+  border: 3px solid #76e272;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 120px;
+  font-size: 24px;
+  color: white;
+  margin: auto;
+  display: block;
+ 
+  
+}
+
+.winner .text h2 {
+margin-top: -60px;
+  
+}
+
+.winner .win {
+  margin: 0 auto;
+  width: fit-content;
+  border: 4px solid #9cee99;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+  
+}
+
+
+
+.board footer button {
+  padding: 16px 24px;
+  margin: 25px;
+  border: 4px solid #9cee99;
+  color: black;
+  width: auto;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  
+}
+
+.cerrarWinnerModal{
+  cursor: pointer;
+  font-size: 36px;
+  font-weight: bold;
+  color: rgba(236, 234, 234, 0.7);
+  text-shadow: 0px 1px 5px rgba(128, 123, 123, 0.5); 
+  display: block;
+  position: relative;
+  top: -15px;
+  left: 80%;
+}
+
+.square {
+  font-family: 'Quicksand', sans-serif;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 100px;
+  text-transform: uppercase;
+}
+
+h1{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 7rem;
+}
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 4rem;
+  
+}
+
+span h2{
+  color: white;
+}
+
+.reactColor{
+  color: #61DAFB ;
+}
+
